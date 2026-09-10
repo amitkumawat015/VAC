@@ -1,0 +1,2234 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<meta name="description"
+    content="Amit Kumar Kumawat - Computer Science & Engineering Student, AI/ML Developer and Technology Enthusiast">
+
+<title>Amit Kumar Kumawat | AI/ML Developer</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --bg: #07090d;
+        --card: #0d1117;
+        --card2: #111722;
+        --text: #f5f7fa;
+        --muted: #8992a3;
+        --line: rgba(255, 255, 255, 0.1);
+        --accent: #6d7cff;
+        --accent2: #8b5cf6;
+        --green: #42d392;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    button {
+        font-family: inherit;
+    }
+
+    ::selection {
+        background: var(--accent);
+        color: white;
+    }
+
+    .container {
+        width: min(1180px, 90%);
+        margin: auto;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        border-bottom: 1px solid var(--line);
+        background: rgba(7, 9, 13, 0.96);
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar {
+        height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 25px;
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+
+    .logo span {
+        color: var(--accent);
+    }
+
+    nav {
+        display: flex;
+        gap: 30px;
+    }
+
+    nav a {
+        color: #929aaa;
+        font-size: 13px;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: white;
+    }
+
+    .nav-btn {
+        border: 1px solid var(--line);
+        padding: 10px 17px;
+        font-size: 12px;
+        transition: 0.3s;
+    }
+
+    .nav-btn:hover {
+        background: white;
+        color: black;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+        min-height: 100vh;
+        padding-top: 140px;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: center;
+        gap: 70px;
+    }
+
+    .available {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 13px;
+        border: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 11px;
+        margin-bottom: 28px;
+    }
+
+    .available span {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 0 0 15px var(--green);
+    }
+
+    .hello {
+        color: var(--accent);
+        font-size: 13px;
+        letter-spacing: 3px;
+        margin-bottom: 12px;
+    }
+
+    .hero h1 {
+        font-size: clamp(60px, 8vw, 110px);
+        line-height: 0.88;
+        letter-spacing: -6px;
+        margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+        display: block;
+        color: #07090d;
+        text-shadow:
+            1px 0 #78808e,
+            -1px 0 #78808e,
+            0 1px #78808e,
+            0 -1px #78808e;
+    }
+
+    .role {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #b1b7c2;
+        font-size: 13px;
+    }
+
+    .role i {
+        width: 30px;
+        height: 1px;
+        background: var(--accent);
+    }
+
+    .hero-description {
+        max-width: 610px;
+        color: var(--muted);
+        font-size: 15px;
+        margin-top: 25px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 12px;
+        margin-top: 32px;
+    }
+
+    .btn {
+        padding: 13px 20px;
+        border: 1px solid var(--line);
+        font-size: 12px;
+        transition: 0.3s;
+    }
+
+    .btn-primary {
+        background: var(--accent);
+        border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+        background: #8490ff;
+        transform: translateY(-3px);
+    }
+
+    .btn-secondary:hover {
+        background: white;
+        color: black;
+    }
+
+    .hero-info {
+        display: flex;
+        gap: 40px;
+        margin-top: 55px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+    }
+
+    .hero-info small {
+        display: block;
+        color: #5d6572;
+        font-size: 9px;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+
+    .hero-info p {
+        font-size: 12px;
+        color: #aab1bd;
+    }
+
+    /* ================= HERO VISUAL ================= */
+
+    .hero-visual {
+        height: 570px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .glow {
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        background: rgba(109, 124, 255, 0.2);
+        border-radius: 50%;
+        filter: blur(90px);
+    }
+
+    .circle {
+        position: absolute;
+        border: 1px solid rgba(109, 124, 255, 0.18);
+        border-radius: 50%;
+    }
+
+    .circle.one {
+        width: 250px;
+        height: 250px;
+    }
+
+    .circle.two {
+        width: 390px;
+        height: 220px;
+        transform: rotate(-30deg);
+    }
+
+    .circle.three {
+        width: 480px;
+        height: 310px;
+        transform: rotate(55deg);
+    }
+
+    .profile-card {
+        width: 290px;
+        height: 380px;
+        position: relative;
+        z-index: 2;
+        background: rgba(13, 17, 23, 0.97);
+        border: 1px solid var(--line);
+        padding: 23px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-top,
+    .card-bottom {
+        display: flex;
+        justify-content: space-between;
+        color: #687180;
+        font-size: 10px;
+    }
+
+    .initials {
+        text-align: center;
+        font-size: 115px;
+        font-weight: 900;
+        letter-spacing: -13px;
+        color: #0d1117;
+        text-shadow:
+            1px 0 #687180,
+            -1px 0 #687180,
+            0 1px #687180,
+            0 -1px #687180;
+    }
+
+    .card-bottom span:first-child {
+        color: var(--accent);
+    }
+
+    .tag {
+        position: absolute;
+        z-index: 5;
+        border: 1px solid var(--line);
+        background: #0b0e13;
+        padding: 10px 14px;
+        font-size: 9px;
+        color: #747d8b;
+    }
+
+    .tag span {
+        color: var(--accent);
+        margin-right: 7px;
+    }
+
+    .tag.one {
+        right: -10px;
+        top: 100px;
+    }
+
+    .tag.two {
+        left: -10px;
+        bottom: 100px;
+    }
+
+    /* ================= GENERAL SECTION ================= */
+
+    section {
+        padding: 120px 0;
+    }
+
+    .section-label {
+        color: #626b79;
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 55px;
+    }
+
+    .section-label span {
+        color: var(--accent);
+        margin-right: 10px;
+    }
+
+    .section-title {
+        font-size: clamp(45px, 6vw, 78px);
+        line-height: 0.95;
+        letter-spacing: -4px;
+    }
+
+    .section-title em {
+        display: block;
+        color: #07090d;
+        text-shadow:
+            1px 0 #737b88,
+            -1px 0 #737b88,
+            0 1px #737b88,
+            0 -1px #737b88;
+        font-style: normal;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
+    }
+
+    .about-text {
+        max-width: 560px;
+    }
+
+    .about-text p {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .about-link {
+        display: inline-block;
+        margin-top: 10px;
+        border-bottom: 1px solid #3b424c;
+        padding-bottom: 7px;
+        font-size: 12px;
+    }
+
+    .about-link span {
+        color: var(--accent);
+        margin-left: 12px;
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 90px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+    }
+
+    .stat {
+        padding: 30px 20px;
+        border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+        border: none;
+    }
+
+    .stat strong {
+        display: block;
+        font-size: 38px;
+        letter-spacing: -2px;
+    }
+
+    .stat small {
+        color: #626b78;
+        font-size: 9px;
+    }
+
+    /* ================= SKILLS ================= */
+
+    .heading-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 50px;
+        margin-bottom: 55px;
+    }
+
+    .heading-row p {
+        max-width: 400px;
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    .skills {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        border-top: 1px solid var(--line);
+        border-left: 1px solid var(--line);
+    }
+
+    .skill {
+        min-height: 230px;
+        padding: 30px;
+        display: grid;
+        grid-template-columns: 55px 1fr;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        transition: 0.3s;
+    }
+
+    .skill:hover {
+        background: var(--card);
+    }
+
+    .skill-number {
+        color: var(--accent);
+        font-size: 11px;
+    }
+
+    .skill h3 {
+        font-size: 21px;
+        margin-bottom: 7px;
+    }
+
+    .skill p {
+        color: #697281;
+        font-size: 11px;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 25px;
+    }
+
+    .tags span {
+        border: 1px solid var(--line);
+        padding: 7px 9px;
+        color: #8b94a3;
+        font-size: 10px;
+    }
+
+    /* ================= PROJECTS ================= */
+
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .project {
+        border: 1px solid var(--line);
+        background: var(--card);
+        overflow: hidden;
+        transition: 0.35s;
+    }
+
+    .project:hover {
+        transform: translateY(-5px);
+        border-color: rgba(109, 124, 255, 0.5);
+    }
+
+    .project.featured {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 60px 42% 1fr;
+    }
+
+    .project-number {
+        padding: 25px;
+        color: var(--accent);
+        font-size: 11px;
+    }
+
+    .project-visual {
+        min-height: 310px;
+        border-left: 1px solid var(--line);
+        border-right: 1px solid var(--line);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Database visual */
+
+    .database {
+        width: 135px;
+        height: 120px;
+        position: relative;
+    }
+
+    .database div {
+        width: 135px;
+        height: 43px;
+        position: absolute;
+        border: 1px solid rgba(109, 124, 255, 0.7);
+        border-radius: 50%;
+        background: #0a0d12;
+    }
+
+    .database div:nth-child(1) {
+        top: 0;
+    }
+
+    .database div:nth-child(2) {
+        top: 37px;
+    }
+
+    .database div:nth-child(3) {
+        top: 74px;
+    }
+
+    .database div:nth-child(4) {
+        top: 111px;
+    }
+
+    /* AI visual */
+
+    .ai-core {
+        width: 150px;
+        height: 150px;
+        border: 1px solid var(--accent);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-shadow: 0 0 50px rgba(109, 124, 255, 0.15);
+    }
+
+    .ai-core::before,
+    .ai-core::after {
+        content: "";
+        position: absolute;
+        border: 1px solid rgba(139, 92, 246, 0.5);
+        border-radius: 50%;
+    }
+
+    .ai-core::before {
+        width: 190px;
+        height: 90px;
+        transform: rotate(45deg);
+    }
+
+    .ai-core::after {
+        width: 90px;
+        height: 190px;
+        transform: rotate(45deg);
+    }
+
+    .ai-text {
+        font-size: 22px;
+        font-weight: bold;
+        color: var(--accent);
+    }
+
+    /* IoT visual */
+
+    .iot {
+        position: relative;
+        width: 180px;
+        height: 180px;
+    }
+
+    .iot-center {
+        position: absolute;
+        top: 60px;
+        left: 60px;
+        width: 60px;
+        height: 60px;
+        border: 1px solid var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        color: var(--accent);
+    }
+
+    .iot-node {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #737b88;
+        border-radius: 50%;
+    }
+
+    .iot-node:nth-child(2) {
+        top: 0;
+        left: 80px;
+    }
+
+    .iot-node:nth-child(3) {
+        bottom: 0;
+        left: 80px;
+    }
+
+    .iot-node:nth-child(4) {
+        top: 80px;
+        left: 0;
+    }
+
+    .iot-node:nth-child(5) {
+        top: 80px;
+        right: 0;
+    }
+
+    .project-info {
+        padding: 35px;
+    }
+
+    .project-info small {
+        color: var(--accent);
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .project-info h3 {
+        font-size: 25px;
+        margin: 14px 0;
+    }
+
+    .project-info p {
+        color: #788291;
+        font-size: 12px;
+    }
+
+    /* ================= EXPERIENCE ================= */
+
+    .timeline {
+        border-top: 1px solid var(--line);
+    }
+
+    .timeline-item {
+        display: grid;
+        grid-template-columns: 140px 1fr 40px;
+        gap: 45px;
+        padding: 42px 0;
+        border-bottom: 1px solid var(--line);
+        transition: 0.3s;
+    }
+
+    .timeline-item:hover {
+        padding-left: 15px;
+    }
+
+    .date {
+        color: #626b78;
+        font-size: 10px;
+    }
+
+    .date strong {
+        display: block;
+        color: white;
+        font-size: 18px;
+    }
+
+    .timeline-content small {
+        color: var(--accent);
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .timeline-content h3 {
+        font-size: 25px;
+        margin: 12px 0;
+    }
+
+    .timeline-content p {
+        max-width: 800px;
+        color: #788291;
+        font-size: 12px;
+    }
+
+    .arrow {
+        font-size: 22px;
+        color: #626b78;
+    }
+
+    /* ================= ACHIEVEMENTS ================= */
+
+    .achievements {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-top: 1px solid var(--line);
+        border-left: 1px solid var(--line);
+    }
+
+    .achievement {
+        min-height: 220px;
+        padding: 30px;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        transition: 0.3s;
+    }
+
+    .achievement:hover {
+        background: var(--card);
+    }
+
+    .achievement span {
+        color: var(--accent);
+        font-size: 10px;
+    }
+
+    .achievement h3 {
+        margin-top: 55px;
+        font-size: 18px;
+    }
+
+    .achievement p {
+        margin-top: 8px;
+        color: #6f7887;
+        font-size: 11px;
+    }
+
+    /* ================= CERTIFICATIONS ================= */
+
+    .certifications {
+        margin-top: 80px;
+    }
+
+    .cert-title {
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+        color: #687180;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .cert {
+        display: grid;
+        grid-template-columns: 50px 1fr 150px;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .cert-number {
+        color: var(--accent);
+        font-size: 10px;
+    }
+
+    .cert p {
+        color: #a3abb8;
+        font-size: 12px;
+    }
+
+    .cert small {
+        color: #606978;
+        font-size: 9px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-box {
+        min-height: 500px;
+        border: 1px solid var(--line);
+        background: var(--card);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .contact-glow {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border: 1px solid rgba(109, 124, 255, 0.12);
+        border-radius: 50%;
+        bottom: -390px;
+    }
+
+    .contact-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .contact-content small {
+        color: var(--accent);
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .contact-content h2 {
+        font-size: clamp(45px, 6vw, 80px);
+        line-height: 0.95;
+        letter-spacing: -4px;
+        margin: 20px 0 35px;
+    }
+
+    .contact-content h2 span {
+        display: block;
+        color: #0d1117;
+        text-shadow:
+            1px 0 #737b88,
+            -1px 0 #737b88,
+            0 1px #737b88,
+            0 -1px #737b88;
+    }
+
+    .contact-button {
+        display: inline-block;
+        padding: 15px 23px;
+        background: var(--accent);
+        font-size: 12px;
+        transition: 0.3s;
+    }
+
+    .contact-button:hover {
+        background: #8791ff;
+        transform: translateY(-3px);
+    }
+
+    .contact-details {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-top: 35px;
+        color: #727b89;
+        font-size: 10px;
+    }
+
+    .contact-details a:hover {
+        color: white;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+        border-top: 1px solid var(--line);
+        padding: 30px 0;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #687180;
+        font-size: 10px;
+    }
+
+    .footer-name strong {
+        display: block;
+        color: #aeb5c0;
+        font-size: 12px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 1000px) {
+
+        .hero {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-visual {
+            position: absolute;
+            right: -130px;
+            top: 150px;
+            opacity: 0.25;
+        }
+
+        .about-grid {
+            gap: 50px;
+        }
+
+        .project.featured {
+            grid-template-columns: 55px 40% 1fr;
+        }
+
+        .achievements {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 750px) {
+
+        nav {
+            display: none;
+        }
+
+        .navbar {
+            height: 68px;
+        }
+
+        .hero {
+            padding-top: 115px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 15vw, 85px);
+            letter-spacing: -5px;
+        }
+
+        .hero-info {
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .about-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .stats {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .stat:nth-child(2) {
+            border-right: none;
+        }
+
+        .skills {
+            grid-template-columns: 1fr;
+        }
+
+        .heading-row {
+            display: block;
+        }
+
+        .heading-row p {
+            margin-top: 20px;
+        }
+
+        .projects {
+            grid-template-columns: 1fr;
+        }
+
+        .project.featured {
+            grid-column: span 1;
+            display: grid;
+            grid-template-columns: 40px 1fr;
+        }
+
+        .project.featured .project-visual {
+            display: none;
+        }
+
+        .project-info {
+            padding: 30px 20px;
+        }
+
+        .timeline-item {
+            grid-template-columns: 75px 1fr;
+            gap: 20px;
+        }
+
+        .arrow {
+            display: none;
+        }
+
+        .achievements {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .cert {
+            grid-template-columns: 35px 1fr;
+        }
+
+        .cert small {
+            grid-column: 2;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+
+        .container {
+            width: 90%;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .stats {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .stat strong {
+            font-size: 28px;
+        }
+
+        .skill {
+            grid-template-columns: 40px 1fr;
+            padding: 25px 20px;
+        }
+
+        .achievements {
+            grid-template-columns: 1fr;
+        }
+
+        .achievement {
+            min-height: 170px;
+        }
+
+        .achievement h3 {
+            margin-top: 35px;
+        }
+
+        .contact-content {
+            padding: 20px;
+        }
+
+        .contact-content h2 {
+            font-size: 43px;
+            letter-spacing: -3px;
+        }
+
+        .contact-details {
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-content {
+            flex-direction: column;
+            gap: 12px;
+            text-align: center;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="container navbar">
+
+        <a href="#home" class="logo">
+            AKK<span>.</span>
+        </a>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#achievements">Achievements</a>
+        </nav>
+
+        <a href="#contact" class="nav-btn">
+            Contact ↗
+        </a>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero container" id="home">
+
+        <div>
+
+            <div class="available">
+                <span></span>
+                COMPUTER SCIENCE & ENGINEERING STUDENT
+            </div>
+
+            <p class="hello">
+                HELLO, I'M
+            </p>
+
+            <h1>
+                Amit
+                <span>Kumawat.</span>
+            </h1>
+
+            <div class="role">
+                <i></i>
+                AI/ML Developer in Progress
+            </div>
+
+            <p class="hero-description">
+                I am a Computer Science & Engineering student passionate
+                about Artificial Intelligence, Machine Learning, software
+                development, web technologies and IoT-based solutions.
+                I enjoy transforming ideas into practical technology-driven
+                projects.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    Explore My Work ↗
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Get In Touch
+                </a>
+
+            </div>
+
+            <div class="hero-info">
+
+                <div>
+                    <small>LOCATION</small>
+                    <p>Jaipur, India</p>
+                </div>
+
+                <div>
+                    <small>EDUCATION</small>
+                    <p>B.Tech CSE</p>
+                </div>
+
+                <div>
+                    <small>FOCUS</small>
+                    <p>AI / ML / IoT</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="glow"></div>
+
+            <div class="circle one"></div>
+            <div class="circle two"></div>
+            <div class="circle three"></div>
+
+            <div class="profile-card">
+
+                <div class="card-top">
+                    <span>AKK / 01</span>
+                    <span>2026</span>
+                </div>
+
+                <div class="initials">
+                    AK
+                </div>
+
+                <div class="card-bottom">
+                    <span>PYTHON</span>
+                    <span>AI/ML</span>
+                    <span>IOT</span>
+                </div>
+
+            </div>
+
+            <div class="tag one">
+                <span>01</span>
+                AI / ML
+            </div>
+
+            <div class="tag two">
+                <span>02</span>
+                INNOVATION
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-label">
+                <span>01</span>
+                ABOUT
+            </div>
+
+            <div class="about-grid">
+
+                <h2 class="section-title">
+                    Turning ideas into
+                    <em>intelligent systems.</em>
+                </h2>
+
+                <div class="about-text">
+
+                    <p>
+                        I'm Amit Kumar Kumawat, a Computer Science &
+                        Engineering student at Poornima College of
+                        Engineering, Jaipur.
+                    </p>
+
+                    <p>
+                        My interests include Artificial Intelligence,
+                        Machine Learning, Python programming, web
+                        development, databases, IoT and embedded
+                        technology.
+                    </p>
+
+                    <p>
+                        I enjoy working on academic and practical projects
+                        that combine software, data and intelligent
+                        technology to solve real-world problems.
+                    </p>
+
+                    <p>
+                        Currently, I am continuously improving my
+                        programming, problem-solving and development skills
+                        while exploring new technologies.
+                    </p>
+
+                    <a href="#contact" class="about-link">
+                        Let's connect
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat">
+                    <strong>AI</strong>
+                    <small>PRIMARY INTEREST</small>
+                </div>
+
+                <div class="stat">
+                    <strong>ML</strong>
+                    <small>MACHINE LEARNING</small>
+                </div>
+
+                <div class="stat">
+                    <strong>IoT</strong>
+                    <small>TECHNOLOGY DOMAIN</small>
+                </div>
+
+                <div class="stat">
+                    <strong>2028</strong>
+                    <small>EXPECTED GRADUATION</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <div class="section-label">
+                <span>02</span>
+                TECHNOLOGY
+            </div>
+
+            <div class="heading-row">
+
+                <h2 class="section-title">
+                    Technical
+                    <em>toolkit.</em>
+                </h2>
+
+                <p>
+                    Technologies, programming languages and computer
+                    science fundamentals that I currently work with
+                    and continue to strengthen.
+                </p>
+
+            </div>
+
+
+            <div class="skills">
+
+                <!-- Programming -->
+
+                <div class="skill">
+
+                    <div class="skill-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>Programming</h3>
+
+                        <p>
+                            Programming languages and problem-solving
+                            fundamentals
+                        </p>
+
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Java</span>
+                            <span>C</span>
+                            <span>C++</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AI ML -->
+
+                <div class="skill">
+
+                    <div class="skill-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3>AI & Machine Learning</h3>
+
+                        <p>
+                            Machine learning models, data analysis
+                            and intelligent applications
+                        </p>
+
+                        <div class="tags">
+                            <span>Machine Learning</span>
+                            <span>Python</span>
+                            <span>Scikit-learn</span>
+                            <span>Data Analysis</span>
+                            <span>AI</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Web -->
+
+                <div class="skill">
+
+                    <div class="skill-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3>Web Development</h3>
+
+                        <p>
+                            Frontend interfaces and backend application
+                            development
+                        </p>
+
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Flask</span>
+                            <span>Responsive Design</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Database -->
+
+                <div class="skill">
+
+                    <div class="skill-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <h3>Database</h3>
+
+                        <p>
+                            Structured data management and SQL
+                            database systems
+                        </p>
+
+                        <div class="tags">
+                            <span>MySQL</span>
+                            <span>SQL</span>
+                            <span>DBMS</span>
+                            <span>JDBC</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IoT -->
+
+                <div class="skill">
+
+                    <div class="skill-number">
+                        05
+                    </div>
+
+                    <div>
+
+                        <h3>IoT & Embedded</h3>
+
+                        <p>
+                            Hardware interfacing, sensors and
+                            IoT-based systems
+                        </p>
+
+                        <div class="tags">
+                            <span>ESP32</span>
+                            <span>ESP32-CAM</span>
+                            <span>Sensors</span>
+                            <span>IoT</span>
+                            <span>Arduino</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Core CS -->
+
+                <div class="skill">
+
+                    <div class="skill-number">
+                        06
+                    </div>
+
+                    <div>
+
+                        <h3>Core Computer Science</h3>
+
+                        <p>
+                            Fundamental concepts used in software
+                            engineering and academics
+                        </p>
+
+                        <div class="tags">
+                            <span>OOP</span>
+                            <span>DSA</span>
+                            <span>DBMS</span>
+                            <span>Operating Systems</span>
+                            <span>Computer Networks</span>
+                            <span>TOC</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <div class="section-label">
+                <span>03</span>
+                SELECTED WORK
+            </div>
+
+            <div class="heading-row">
+
+                <h2 class="section-title">
+                    Things I've
+                    <em>built.</em>
+                </h2>
+
+                <p>
+                    Selected academic and technology projects
+                    covering AI/ML, IoT, automation, web development
+                    and software engineering.
+                </p>
+
+            </div>
+
+
+            <div class="projects">
+
+
+                <!-- PROJECT 01 -->
+
+                <article class="project featured">
+
+                    <div class="project-number">
+                        01
+                    </div>
+
+                    <div class="project-visual">
+
+                        <div class="iot">
+
+                            <div class="iot-center">
+                                IoT
+                            </div>
+
+                            <div class="iot-node"></div>
+                            <div class="iot-node"></div>
+                            <div class="iot-node"></div>
+                            <div class="iot-node"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <small>INDUSTRIAL AUTOMATION</small>
+
+                        <h3>
+                            Smart Elevator Control System
+                        </h3>
+
+                        <p>
+                            A PLC and HMI based smart elevator control
+                            system designed for automated floor selection,
+                            door control, overload detection, emergency
+                            stop and real-time monitoring.
+                        </p>
+
+                        <div class="tags">
+                            <span>PLC</span>
+                            <span>HMI</span>
+                            <span>IoT</span>
+                            <span>Automation</span>
+                            <span>EcoStruxure</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 02 -->
+
+                <article class="project">
+
+                    <div class="project-visual">
+
+                        <div class="ai-core">
+
+                            <div class="ai-text">
+                                AI
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <small>ARTIFICIAL INTELLIGENCE</small>
+
+                        <h3>
+                            AI Health Detection Assistant
+                        </h3>
+
+                        <p>
+                            An AI-based healthcare assistant concept
+                            designed to help users understand health
+                            information, identify possible diseases,
+                            connect with doctors and manage appointments
+                            and reports.
+                        </p>
+
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>AI</span>
+                            <span>Machine Learning</span>
+                            <span>Healthcare</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 03 -->
+
+                <article class="project">
+
+                    <div class="project-visual">
+
+                        <div class="database">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <small>DATABASE SYSTEM</small>
+
+                        <h3>
+                            Online Shopping Database
+                        </h3>
+
+                        <p>
+                            A relational database system designed for
+                            managing customers, products and orders using
+                            SQL, joins, triggers, cursors and structured
+                            database operations.
+                        </p>
+
+                        <div class="tags">
+                            <span>MySQL</span>
+                            <span>SQL</span>
+                            <span>DBMS</span>
+                            <span>Triggers</span>
+                            <span>Joins</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 04 -->
+
+                <article class="project">
+
+                    <div class="project-visual">
+
+                        <div class="ai-core">
+
+                            <div class="ai-text">
+                                ML
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <small>MACHINE LEARNING</small>
+
+                        <h3>
+                            Disease Prediction Model
+                        </h3>
+
+                        <p>
+                            Machine learning experimentation involving
+                            preprocessing, feature selection and
+                            classification models for disease prediction
+                            using Python and Scikit-learn.
+                        </p>
+
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Scikit-learn</span>
+                            <span>Random Forest</span>
+                            <span>Logistic Regression</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 05 -->
+
+                <article class="project">
+
+                    <div class="project-visual">
+
+                        <div class="iot">
+
+                            <div class="iot-center">
+                                ESP32
+                            </div>
+
+                            <div class="iot-node"></div>
+                            <div class="iot-node"></div>
+                            <div class="iot-node"></div>
+                            <div class="iot-node"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <small>EMBEDDED / IoT</small>
+
+                        <h3>
+                            Smart IoT Monitoring System
+                        </h3>
+
+                        <p>
+                            An embedded IoT project using ESP32,
+                            sensors and real-time data monitoring
+                            for technology-driven automation and
+                            control applications.
+                        </p>
+
+                        <div class="tags">
+                            <span>ESP32</span>
+                            <span>Arduino</span>
+                            <span>Sensors</span>
+                            <span>IoT</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <section id="experience">
+
+        <div class="container">
+
+            <div class="section-label">
+                <span>04</span>
+                EXPERIENCE
+            </div>
+
+            <div class="heading-row">
+
+                <h2 class="section-title">
+                    Learning through
+                    <em>experience.</em>
+                </h2>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <article class="timeline-item">
+
+                    <div class="date">
+                        <strong>2026</strong>
+                        TRAINING
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <small>INDUSTRIAL IoT</small>
+
+                        <h3>
+                            Industrial IoT & Embedded Systems
+                        </h3>
+
+                        <p>
+                            Worked on Industrial IoT concepts,
+                            sensors, embedded systems, automation,
+                            communication protocols and practical
+                            technology applications.
+                        </p>
+
+                        <div class="tags">
+                            <span>IoT</span>
+                            <span>Python</span>
+                            <span>Embedded Systems</span>
+                            <span>Automation</span>
+                        </div>
+
+                    </div>
+
+                    <div class="arrow">
+                        ↗
+                    </div>
+
+                </article>
+
+
+                <article class="timeline-item">
+
+                    <div class="date">
+                        <strong>2025</strong>
+                        TRAINING
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <small>PYTHON PROGRAMMING</small>
+
+                        <h3>
+                            Python Programming Industrial Training
+                        </h3>
+
+                        <p>
+                            Completed practical programming work focused
+                            on Python fundamentals, problem solving,
+                            debugging and implementing programming
+                            solutions through hands-on assignments.
+                        </p>
+
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Programming</span>
+                            <span>Debugging</span>
+                        </div>
+
+                    </div>
+
+                    <div class="arrow">
+                        ↗
+                    </div>
+
+                </article>
+
+
+                <article class="timeline-item">
+
+                    <div class="date">
+                        <strong>2025</strong>
+                        PROJECT
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <small>ACADEMIC DEVELOPMENT</small>
+
+                        <h3>
+                            AI, IoT & Software Projects
+                        </h3>
+
+                        <p>
+                            Developed and explored multiple academic
+                            projects involving machine learning,
+                            databases, web development, embedded systems
+                            and IoT technologies.
+                        </p>
+
+                        <div class="tags">
+                            <span>AI/ML</span>
+                            <span>Web</span>
+                            <span>DBMS</span>
+                            <span>IoT</span>
+                        </div>
+
+                    </div>
+
+                    <div class="arrow">
+                        ↗
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ACHIEVEMENTS ================= -->
+
+    <section id="achievements">
+
+        <div class="container">
+
+            <div class="section-label">
+                <span>05</span>
+                ACHIEVEMENTS
+            </div>
+
+
+            <div class="achievements">
+
+                <div class="achievement">
+
+                    <span>01</span>
+
+                    <h3>
+                        AI / ML Projects
+                    </h3>
+
+                    <p>
+                        Hands-on work with machine learning,
+                        Python and data-driven applications.
+                    </p>
+
+                </div>
+
+
+                <div class="achievement">
+
+                    <span>02</span>
+
+                    <h3>
+                        IoT Development
+                    </h3>
+
+                    <p>
+                        Practical experience with ESP32,
+                        sensors and embedded systems.
+                    </p>
+
+                </div>
+
+
+                <div class="achievement">
+
+                    <span>03</span>
+
+                    <h3>
+                        Smart Systems
+                    </h3>
+
+                    <p>
+                        Developed technology-driven academic
+                        solutions combining software and hardware.
+                    </p>
+
+                </div>
+
+
+                <div class="achievement">
+
+                    <span>04</span>
+
+                    <h3>
+                        Continuous Learning
+                    </h3>
+
+                    <p>
+                        Continuously building skills in AI,
+                        programming, web and emerging technologies.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CERTIFICATIONS -->
+
+            <div class="certifications">
+
+                <div class="cert-title">
+                    TRAINING & CERTIFICATIONS
+                </div>
+
+
+                <div class="cert">
+
+                    <span class="cert-number">
+                        01
+                    </span>
+
+                    <p>
+                        Industrial IoT & Embedded Systems Training
+                    </p>
+
+                    <small>
+                        2026
+                    </small>
+
+                </div>
+
+
+                <div class="cert">
+
+                    <span class="cert-number">
+                        02
+                    </span>
+
+                    <p>
+                        Python Programming Industrial Training
+                    </p>
+
+                    <small>
+                        2025
+                    </small>
+
+                </div>
+
+
+                <div class="cert">
+
+                    <span class="cert-number">
+                        03
+                    </span>
+
+                    <p>
+                        Computer Science & Engineering Academic Projects
+                    </p>
+
+                    <small>
+                        2025 — 2026
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <div class="contact-glow"></div>
+
+                <div class="contact-content">
+
+                    <small>
+                        HAVE A PROJECT / OPPORTUNITY?
+                    </small>
+
+                    <h2>
+                        Let's build
+                        <span>something intelligent.</span>
+                    </h2>
+
+                    <!-- Replace YOUR_EMAIL with your real email -->
+
+                    <a href="mailto:YOUR_EMAIL@gmail.com"
+                        class="contact-button">
+                        Start a conversation ↗
+                    </a>
+
+                    <div class="contact-details">
+
+                        <a href="mailto:YOUR_EMAIL@gmail.com">
+                            YOUR_EMAIL@gmail.com
+                        </a>
+
+                        <span>
+                            YOUR PHONE NUMBER
+                        </span>
+
+                        <a href="https://www.linkedin.com/"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            LinkedIn ↗
+                        </a>
+
+                        <a href="https://github.com/"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            GitHub ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div class="footer-name">
+
+            <strong>
+                AMIT KUMAR KUMAWAT
+            </strong>
+
+            Computer Science & Engineering
+
+        </div>
+
+        <p>
+            Built with HTML, CSS & JavaScript.
+        </p>
+
+        <span>
+            © 2026
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(function (link) {
+
+            link.addEventListener("click", function (event) {
+
+                const href = this.getAttribute("href");
+
+                if (href && href !== "#") {
+
+                    const target =
+                        document.querySelector(href);
+
+                    if (target) {
+
+                        event.preventDefault();
+
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+
+                    }
+
+                }
+
+            });
+
+        });
+
+</script>
+```
+
+</body>
+
+</html>
