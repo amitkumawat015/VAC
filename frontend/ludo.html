@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ludo Board</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #2b2b2b;
+    }
+
+    /* Colors */
+    :root {
+      --green: #2ecc71;
+      --yellow: #f1c40f;
+      --red: #e74c3c;
+      --blue: #3498db;
+      --border-color: #333;
+    }
+
+    /* Board Container */
+    .ludo-board {
+      width: 600px;
+      height: 600px;
+      background: #fff;
+      display: grid;
+      grid-template-columns: repeat(15, 1fr);
+      grid-template-rows: repeat(15, 1fr);
+      border: 4px solid #111;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Cells */
+    .cell {
+      border: 2px solid #585656;
+      background: linear-gradient(
+                45deg,
+                #feda75,
+                #fa7e1e,
+                #d62976,
+                #962fbf
+            );
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    /* Safe stars & arrows */
+    .star {
+      color: #333;
+      font-size: 25px;
+    }
+
+    .arrow {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    /* Corner Bases */
+    .base {
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--border-color);
+    }
+
+    .base-inner {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+                45deg,
+                #feda75,
+                #fa7e1e,
+                #d62976,
+                #962fbf,
+                #4f5bd5,
+                #4b876d,
+                #0d4516
+            );
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 16px;
+      padding: 16px;
+      border: 1px solid #ddd;
+    }
+
+    .circle {
+      border-radius: 50%;
+      border: 2px solid rgba(98, 250, 146, 0.25);
+    }
+
+    /* Specific Base Placements */
+    .base-green {
+      grid-area: 1 / 1 / 7 / 7;
+      background: var(--green);
+    }
+    .base-green .circle { background: var(--green); }
+
+    .base-yellow {
+      grid-area: 1 / 10 / 7 / 16;
+      background: var(--yellow);
+    }
+    .base-yellow .circle { background: var(--yellow); }
+
+    .base-red {
+      grid-area: 10 / 1 / 16 / 7;
+      background: var(--red);
+    }
+    .base-red .circle { background: var(--red); }
+
+    .base-blue {
+      grid-area: 10 / 10 / 16 / 16;
+      background: var(--blue);
+    }
+    .base-blue .circle { background: var(--blue); }
+
+    /* Center Triangle Box */
+    .center-box {
+      grid-area: 7 / 7 / 10 / 10;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .triangle-top {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--yellow);
+      clip-path: polygon(0 0, 100% 0, 50% 50%);
+    }
+
+    .triangle-right {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--blue);
+      clip-path: polygon(100% 0, 100% 100%, 50% 50%);
+    }
+
+    .triangle-bottom {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--red);
+      clip-path: polygon(0 100%, 100% 100%, 50% 50%);
+    }
+
+    .triangle-left {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--green);
+      clip-path: polygon(0 0, 0 100%, 50% 50%);
+    }
+
+    /* Path Fill Classes */
+    .bg-g { background: var(--green); border-color: #27ae60; }
+    .bg-y { background: var(--yellow); border-color: #f39c12; }
+    .bg-r { background: var(--red); border-color: #c0392b; }
+    .bg-b { background: var(--blue); border-color: #2980b9; }
+
+    .text-g { color: #27ae60; }
+    .text-y { color: #f39c12; }
+    .text-r { color: #c0392b; }
+    .text-b { color: #2980b9; }
+  </style>
+</head>
+<body>
+
+  <div class="ludo-board">
+    <!-- Green Base -->
+    <div class="base base-green">
+      <div class="base-inner">
+        <div class="circle"></div><div class="circle"></div>
+        <div class="circle"></div><div class="circle"></div>
+      </div>
+    </div>
+
+    <!-- Yellow Base -->
+    <div class="base base-yellow">
+      <div class="base-inner">
+        <div class="circle"></div><div class="circle"></div>
+        <div class="circle"></div><div class="circle"></div>
+      </div>
+    </div>
+
+    <!-- Red Base -->
+    <div class="base base-red">
+      <div class="base-inner">
+        <div class="circle"></div><div class="circle"></div>
+        <div class="circle"></div><div class="circle"></div>
+      </div>
+    </div>
+
+    <!-- Blue Base -->
+    <div class="base base-blue">
+      <div class="base-inner">
+        <div class="circle"></div><div class="circle"></div>
+        <div class="circle"></div><div class="circle"></div>
+      </div>
+    </div>
+
+    <!-- Center Triangles -->
+    <div class="center-box">
+      <div class="triangle-top"></div>
+      <div class="triangle-right"></div>
+      <div class="triangle-bottom"></div>
+      <div class="triangle-left"></div>
+    </div>
+
+    <!-- TOP ARM (Columns 7 to 9, Rows 1 to 6) -->
+    <!-- Row 1 -->
+    <div class="cell" style="grid-area: 1/7;"></div>
+    <div class="cell arrow text-y" style="grid-area: 1/8;">⬇</div>
+    <div class="cell" style="grid-area: 1/9;"></div>
+    <!-- Row 2 -->
+    <div class="cell" style="grid-area: 2/7;"></div>
+    <div class="cell bg-y" style="grid-area: 2/8;"></div>
+    <div class="cell bg-y" style="grid-area: 2/9;"></div>
+    <!-- Row 3 -->
+    <div class="cell star" style="grid-area: 3/7;">☆</div>
+    <div class="cell bg-y" style="grid-area: 3/8;"></div>
+    <div class="cell" style="grid-area: 3/9;"></div>
+    <!-- Row 4 -->
+    <div class="cell" style="grid-area: 4/7;"></div>
+    <div class="cell bg-y" style="grid-area: 4/8;"></div>
+    <div class="cell" style="grid-area: 4/9;"></div>
+    <!-- Row 5 -->
+    <div class="cell" style="grid-area: 5/7;"></div>
+    <div class="cell bg-y" style="grid-area: 5/8;"></div>
+    <div class="cell" style="grid-area: 5/9;"></div>
+    <!-- Row 6 -->
+    <div class="cell" style="grid-area: 6/7;"></div>
+    <div class="cell bg-y" style="grid-area: 6/8;"></div>
+    <div class="cell" style="grid-area: 6/9;"></div>
+
+    <!-- BOTTOM ARM (Columns 7 to 9, Rows 10 to 15) -->
+    <!-- Row 10 -->
+    <div class="cell" style="grid-area: 10/7;"></div>
+    <div class="cell bg-r" style="grid-area: 10/8;"></div>
+    <div class="cell" style="grid-area: 10/9;"></div>
+    <!-- Row 11 -->
+    <div class="cell" style="grid-area: 11/7;"></div>
+    <div class="cell bg-r" style="grid-area: 11/8;"></div>
+    <div class="cell" style="grid-area: 11/9;"></div>
+    <!-- Row 12 -->
+    <div class="cell" style="grid-area: 12/7;"></div>
+    <div class="cell bg-r" style="grid-area: 12/8;"></div>
+    <div class="cell" style="grid-area: 12/9;"></div>
+    <!-- Row 13 -->
+    <div class="cell" style="grid-area: 13/7;"></div>
+    <div class="cell bg-r" style="grid-area: 13/8;"></div>
+    <div class="cell star" style="grid-area: 13/9;">☆</div>
+    <!-- Row 14 -->
+    <div class="cell bg-r" style="grid-area: 14/7;"></div>
+    <div class="cell bg-r" style="grid-area: 14/8;"></div>
+    <div class="cell" style="grid-area: 14/9;"></div>
+    <!-- Row 15 -->
+    <div class="cell" style="grid-area: 15/7;"></div>
+    <div class="cell arrow text-r" style="grid-area: 15/8;">⬆</div>
+    <div class="cell" style="grid-area: 15/9;"></div>
+
+    <!-- LEFT ARM (Columns 1 to 6, Rows 7 to 9) -->
+    <!-- Row 7 -->
+    <div class="cell" style="grid-area: 7/1;"></div>
+    <div class="cell bg-g" style="grid-area: 7/2;"></div>
+    <div class="cell" style="grid-area: 7/3;"></div>
+    <div class="cell" style="grid-area: 7/4;"></div>
+    <div class="cell" style="grid-area: 7/5;"></div>
+    <div class="cell" style="grid-area: 7/6;"></div>
+    <!-- Row 8 -->
+    <div class="cell arrow text-g" style="grid-area: 8/1;">➡</div>
+    <div class="cell bg-g" style="grid-area: 8/2;"></div>
+    <div class="cell bg-g" style="grid-area: 8/3;"></div>
+    <div class="cell bg-g" style="grid-area: 8/4;"></div>
+    <div class="cell bg-g" style="grid-area: 8/5;"></div>
+    <div class="cell bg-g" style="grid-area: 8/6;"></div>
+    <!-- Row 9 -->
+    <div class="cell" style="grid-area: 9/1;"></div>
+    <div class="cell" style="grid-area: 9/2;"></div>
+    <div class="cell star" style="grid-area: 9/3;">☆</div>
+    <div class="cell" style="grid-area: 9/4;"></div>
+    <div class="cell" style="grid-area: 9/5;"></div>
+    <div class="cell" style="grid-area: 9/6;"></div>
+
+    <!-- RIGHT ARM (Columns 10 to 15, Rows 7 to 9) -->
+    <!-- Row 7 -->
+    <div class="cell" style="grid-area: 7/10;"></div>
+    <div class="cell" style="grid-area: 7/11;"></div>
+    <div class="cell" style="grid-area: 7/12;"></div>
+    <div class="cell star" style="grid-area: 7/13;">☆</div>
+    <div class="cell" style="grid-area: 7/14;"></div>
+    <div class="cell" style="grid-area: 7/15;"></div>
+    <!-- Row 8 -->
+    <div class="cell bg-b" style="grid-area: 8/10;"></div>
+    <div class="cell bg-b" style="grid-area: 8/11;"></div>
+    <div class="cell bg-b" style="grid-area: 8/12;"></div>
+    <div class="cell bg-b" style="grid-area: 8/13;"></div>
+    <div class="cell bg-b" style="grid-area: 8/14;"></div>
+    <div class="cell arrow text-b" style="grid-area: 8/15;">⬅</div>
+    <!-- Row 9 -->
+    <div class="cell" style="grid-area: 9/10;"></div>
+    <div class="cell" style="grid-area: 9/11;"></div>
+    <div class="cell" style="grid-area: 9/12;"></div>
+    <div class="cell" style="grid-area: 9/13;"></div>
+    <div class="cell bg-b" style="grid-area: 9/14;"></div>
+    <div class="cell" style="grid-area: 9/15;"></div>
+  </div>
+
+</body>
+</html> 
